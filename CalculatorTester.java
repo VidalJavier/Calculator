@@ -1,3 +1,5 @@
+package s.Calculator;
+
 import javax.swing.*;
 
 public class CalculatorTester{
