@@ -6,12 +6,12 @@ import java.awt.event.*;
 
 public class ButtonPanel extends JPanel implements ActionListener{
 	private JButton[] button;
-    private boolean[] math = {false, false, false};
+    	private boolean[] math = {false, false, false};
 	private int[] temp = {0,0};
 	private String[] btn = {"7", "8", "9", "+",
-							"4", "5", "6", "-",
-							"1", "2", "3", "*",
-							"0", "CE", "+/-", "="};
+				"4", "5", "6", "-",
+				"1", "2", "3", "*",
+				"0", "CE", "+/-", "="};
 	
 	public ButtonPanel(){
 		//Design
