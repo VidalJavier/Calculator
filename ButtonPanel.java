@@ -10,10 +10,10 @@ public class ButtonPanel extends JPanel implements ActionListener{
 	private Stack<Character> oper = new Stack<Character>();
 	private JButton[] button;
 	private String[] btn = {"7", "8", "9", "+",
-				"4", "5", "6", "-",
-				"1", "2", "3", "*",
-				"0", "CE", "+/-", "/",
-				"", "", "", "="};
+							"4", "5", "6", "-",
+							"1", "2", "3", "*",
+							"0", "CE", "+/-", "/",
+							"", "", "", "="};
 	
 	public ButtonPanel(){
 		//Design
@@ -130,43 +130,36 @@ public class ButtonPanel extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent event) {
 		if(event.getSource() == button[0]){
 			ScreenPanel.screen.append("7");
-			num.push((float) 7);
 		}else if(event.getSource() == button[1]){
 			ScreenPanel.screen.append("8");
-			num.push((float) 8);
 		}else if(event.getSource() == button[2]){
 			ScreenPanel.screen.append("9");
-			num.push((float) 9);
 		}else if(event.getSource() == button[3] && !ScreenPanel.screen.getText().equals("")){
+			num.push(Float.parseFloat(ScreenPanel.screen.getText()));
 			ScreenPanel.screen.setText("");
 			oper.push('+');
 		}else if(event.getSource() == button[4]){
 			ScreenPanel.screen.append("4");
-			num.push((float) 4);
 		}else if(event.getSource() == button[5]){
 			ScreenPanel.screen.append("5");
-			num.push((float) 5);
 		}else if(event.getSource() == button[6]){
 			ScreenPanel.screen.append("6");
-			num.push((float) 6);
 		}else if(event.getSource() == button[7] && !ScreenPanel.screen.getText().equals("")){
+			num.push(Float.parseFloat(ScreenPanel.screen.getText()));
 			ScreenPanel.screen.setText("");
 			oper.push('-');
 		}else if(event.getSource() == button[8]){
 			ScreenPanel.screen.append("1");
-			num.push((float) 1);
 		}else if(event.getSource() == button[9]){
 			ScreenPanel.screen.append("2");
-			num.push((float) 2);
 		}else if(event.getSource() == button[10]){
 			ScreenPanel.screen.append("3");
-			num.push((float) 3);
 		}else if(event.getSource() == button[11] && !ScreenPanel.screen.getText().equals("")){
+			num.push(Float.parseFloat(ScreenPanel.screen.getText()));
 			ScreenPanel.screen.setText("");
 			oper.push('*');
 		}else if(event.getSource() == button[12] && !ScreenPanel.screen.getText().equals("")){
 			ScreenPanel.screen.append("0");
-			num.push((float) 0);
 		}else if(event.getSource() == button[13]){
 			ScreenPanel.screen.setText("");
 			num.clear();
@@ -174,9 +167,11 @@ public class ButtonPanel extends JPanel implements ActionListener{
 		}else if(event.getSource() == button[14] && !ScreenPanel.screen.getText().equals("")){
 			signChange();
 		}else if(event.getSource() == button[15] && !ScreenPanel.screen.getText().equals("")){
+			num.push(Float.parseFloat(ScreenPanel.screen.getText()));
 			ScreenPanel.screen.setText("");
 			oper.push('/');
 		}else if(event.getSource() == button[19] && !ScreenPanel.screen.getText().equals("")){
+			num.push(Float.parseFloat(ScreenPanel.screen.getText()));
 			result();
 		}
 	}
