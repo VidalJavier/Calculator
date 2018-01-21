@@ -10,10 +10,10 @@ public class ButtonPanel extends JPanel implements ActionListener{
 	private Stack<Character> oper = new Stack<Character>();
 	private JButton[] button;
 	private String[] btn = {"7", "8", "9", "+",
-							"4", "5", "6", "-",
-							"1", "2", "3", "*",
-							"0", "CE", "+/-", "/",
-							"", "", "", "="};
+				"4", "5", "6", "-",
+				"1", "2", "3", "*",
+				"0", "CE", "+/-", "/",
+				"", "", "", "="};
 	
 	public ButtonPanel(){
 		//Design
