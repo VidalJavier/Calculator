@@ -8,12 +8,13 @@ public class ButtonPanel extends JPanel implements ActionListener{
 	
 	private Stack<Float> num = new Stack<Float>();
 	private Stack<Character> oper = new Stack<Character>();
+	private boolean check = false;
 	private JButton[] button;
 	private String[] btn = {"7", "8", "9", "+",
-							"4", "5", "6", "-",
-							"1", "2", "3", "*",
-							"0", "CE", "+/-", "/",
-							"", "", "", "="};
+				"4", "5", "6", "-",
+				"1", "2", "3", "*",
+				"0", "CE", "+/-", "/",
+				"", "", "", "="};
 	
 	public ButtonPanel(){
 		//Design
@@ -128,6 +129,10 @@ public class ButtonPanel extends JPanel implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent event) {
+		if(check){
+			ScreenPanel.screen.setText("");
+			check = false;
+		}
 		if(event.getSource() == button[0]){
 			ScreenPanel.screen.append("7");
 		}else if(event.getSource() == button[1]){
@@ -172,6 +177,7 @@ public class ButtonPanel extends JPanel implements ActionListener{
 			oper.push('/');
 		}else if(event.getSource() == button[19] && !ScreenPanel.screen.getText().equals("")){
 			num.push(Float.parseFloat(ScreenPanel.screen.getText()));
+			check = true;
 			result();
 		}
 	}
